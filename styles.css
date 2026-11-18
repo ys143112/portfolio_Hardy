@@ -54,10 +54,7 @@ h1{margin:24px 0 22px;font-size:clamp(56px,5.55vw,85px);line-height:1.13;letter-
 .sheet-title{line-height:1.12;margin-top:clamp(15px,1.8vw,28px);letter-spacing:-.06em;color:#173c31}
 .sheet-title span{display:block;font-size:clamp(21px,2.35vw,37px);font-weight:650;letter-spacing:-.05em}
 .sheet-title strong{display:block;font-size:clamp(23px,2.4vw,39px);margin-top:3px;font-weight:800}
-.sheet-flow{display:flex;flex-direction:column;gap:5px;margin:auto 0;color:#43594d;font-size:clamp(9px,.85vw,12px);font-weight:650}
-.sheet-flow span{display:flex;align-items:center;gap:8px}
-.sheet-flow i{display:inline-block;width:7px;height:7px;border:1px solid #59715c}
-.sheet-flow span:nth-child(2) i{border-color:var(--orange);background:var(--orange)}
+.sheet-quote { margin: 4px 0; font-size: clamp(11px, 1vw, 15px); line-height: 1.5; color: #3e5749; }
 .sheet-bottom{border-top:1px solid #a5b4a3;display:flex;justify-content:space-between;align-items:center;padding-top:7px;color:#4b6051;font-size:clamp(9px,.78vw,11px);font-weight:600}
 .section-heading{padding-bottom:18px;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink)}
 .section-heading h2,.about-title h2{font-size:clamp(27px,2.6vw,38px);line-height:1.25;letter-spacing:-.065em}
@@ -80,16 +77,38 @@ h1{margin:24px 0 22px;font-size:clamp(56px,5.55vw,85px);line-height:1.13;letter-
 .evidence-bar b{font-weight:750}
 .bar-tail{margin-left:auto;color:#52695b;font-size:11px;font-weight:600}
 .bar-tail[lang]{font-family:var(--mono)}
-.guide-card details+details{border-top:1px solid #dbe1d5}
-.guide-card summary{position:relative;cursor:pointer;list-style:none;padding:15px 44px 15px 20px;font-weight:700;font-size:15px;letter-spacing:-.02em}
-.guide-card summary::-webkit-details-marker{display:none}
-.guide-card summary::after{content:"+";position:absolute;right:19px;color:#59735f;font-size:19px;line-height:1.2;font-weight:400}
-.guide-card [open]>summary::after{content:"−"}
-.guide-card summary:hover{background:#f2f4ec}
-.detail-body{padding:0 20px 20px;color:var(--text)}
-.detail-body blockquote{border-left:3px solid var(--orange);padding:3px 0 3px 12px;font-weight:650;line-height:1.6;color:var(--ink)}
-.detail-body p,.detail-body code{margin-top:7px;font-size:13px;line-height:1.7}
-.detail-body code{display:block;font-family:var(--mono);padding:9px 12px;background:#eef1e8;border-radius:4px;overflow-wrap:anywhere;word-break:break-all}
+.guide-steps {
+  margin: 0;
+  padding: 0 20px;
+  list-style-position: inside;
+}
+.guide-steps li {
+  padding: 13px 0;
+  font-size: 15px;
+}
+.guide-steps li + li { border-top: 1px solid var(--line); }
+.guide-steps li::marker { color: var(--muted); font-family: var(--mono); font-size: 12px; }
+.guide-steps li span { display: block; margin-top: 3px; color: var(--text); font-size: 14px; }
+.case-copy > p + p:not(.meta) { margin-top: 12px; }
+.case-copy > p.sample-origin { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.ledger { border-collapse: collapse; width: 100%; font-size: clamp(13px, 1.05vw, 15px); font-variant-numeric: tabular-nums; }
+.ledger th, .ledger td { padding: 11px 9px; text-align: right; }
+.ledger thead th { font-size: 12px; color: var(--muted); font-weight: 650; }
+.ledger tr > :first-child { text-align: left; padding-left: clamp(9px, 1.4vw, 22px); }
+.ledger tr > :last-child { text-align: left; padding-left: clamp(5px, 1.3vw, 18px); }
+.ledger tbody tr { border-top: 1px solid var(--line); }
+.ledger tbody th { font-family: var(--mono); font-size: 12px; }
+.ledger .ledger-check { background: #fbf2e6; }
+.ledger .ledger-check td:last-child { color: #81411f; font-weight: 700; }
+.ledger td small { display: block; font-size: 12px; font-weight: 500; }
+.statements { margin-bottom: 17px; }
+.statements > div { display: grid; grid-template-columns: 65px 1fr; gap: 8px; align-items: baseline; }
+.statements > div + div { margin-top: 7px; }
+.statements dt { color: var(--muted); font-size: 12px; }
+.statements dd { font-weight: 650; font-size: clamp(14px, 1.2vw, 17px); }
+@media (max-width: 380px) {
+  .ledger th, .ledger td { padding-inline: 5px; }
+}
 .intake-body{padding:19px 21px 21px}
 .micro-label,.mode-picker legend{color:var(--muted);font-size:12px;font-weight:650}
 .quoted-input{font-size:clamp(18px,1.65vw,24px);line-height:1.5;letter-spacing:-.04em;font-weight:700;margin:5px 0 17px}

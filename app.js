@@ -6,10 +6,10 @@ const modeCopy = document.getElementById("mode-copy");
 
 function updateSummaryMode(event) {
   const isManual = event.target.value === "manual";
-  modeHeading.textContent = isManual ? "이용자가 편집한 요약 유지" : "정정 내용으로 요약 갱신";
-  modeCopy.textContent = isManual
-    ? "기존 진술 아래에 정정을 덧붙이고, 이용자가 편집한 요약은 보존합니다."
-    : "기존 진술에 정정을 덧붙이고 자동 요약을 갱신합니다.";
+  modeHeading.textContent = isManual
+    ? "직접 고친 요약을 그대로 둡니다."
+    : "정정한 답변을 반영합니다.";
+  modeCopy.textContent = "두 답변 모두 문의 기록에 남습니다.";
 }
 
 for (const choice of modeChoices) {
