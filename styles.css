@@ -66,7 +66,7 @@ img { display: block; max-width: 100%; }
   margin-block: 12px;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  word-break: break-all;
+  word-break: normal;
   font: clamp(12px, 1.07vw, 14px)/1.85 var(--mono);
 }
 .extract pre code { font: inherit; }
